@@ -30,18 +30,19 @@ maufant-youth-project/
 ### Open-source components
 
 The site stays dependency-free at build time — no bundler, no `npm install` — but it is
-enriched by six small, permissively-licensed open-source libraries loaded from a CDN.
-Every integration is guarded in `assets/js/main.js`, so if a CDN is unreachable the page
-still works and simply drops that enhancement.
+enriched by a set of deliberately **niche, permissively-licensed** open-source libraries.
+Five are loaded from a CDN and one (Iconoir) is inlined as SVG. Every integration is
+guarded in `assets/js/main.js`, so if a CDN is unreachable the page still works and simply
+drops that enhancement.
 
 | Library | Licence | Used for | Where |
 |---|---|---|---|
-| [Leaflet](https://leafletjs.com) + [OpenStreetMap](https://www.openstreetmap.org) | BSD-2 / ODbL | Interactive location map — no API key, no Google | `sessions.html`, `contact.html` |
-| [GLightbox](https://biati-digital.github.io/glightbox/) | MIT | Photo lightbox for the gallery | `index.html` |
-| [Swiper](https://swiperjs.com) | MIT | Testimonials carousel | `index.html` |
-| [Chart.js](https://www.chartjs.org) | MIT | "Where your money goes" donation chart | `index.html` |
-| [Lucide](https://lucide.dev) | ISC | Icon system (replaces the old emoji glyphs) | all pages |
-| [Just-validate](https://just-validate.dev) | MIT | Contact-form validation | `contact.html` |
+| [MapLibre GL JS](https://maplibre.org) + [OpenFreeMap](https://openfreemap.org) | BSD-3 | Vector location map — no API key, no Google | `sessions.html`, `contact.html` |
+| [BaguetteBox.js](https://feimosi.github.io/baguetteBox.js/) | MIT | Photo lightbox for the gallery | `index.html` |
+| [Keen Slider](https://keen-slider.io) | MIT | Testimonials carousel | `index.html` |
+| [Frappe Charts](https://frappe.io/charts) | MIT | "Where your money goes" donation donut | `index.html` |
+| [Iconoir](https://iconoir.com) | MIT | Icon system (SVG, inlined) — replaces the emoji glyphs | all pages |
+| [PristineJS](https://pristine.js.org) | MIT | Contact-form validation | `contact.html` |
 
 To self-host instead of using the CDN, download each library into `assets/vendor/` and
 swap the `<script>`/`<link>` URLs in the page `<head>` and before `</body>`.
@@ -94,9 +95,9 @@ before launch:
    or replaced with the charity's own approved wording.
 7. **Terms/privacy** — small charities collecting email addresses should publish
    a short privacy notice describing what is done with them.
-8. **Map coordinates** — the Leaflet map marker uses approximate coordinates for
-   Maufant (`49.2098, -2.0632`) in `assets/js/main.js`. Replace `CENTRE` with the
-   Centre's exact latitude/longitude before launch.
+8. **Map coordinates** — the MapLibre marker uses approximate coordinates for Maufant
+   (`-2.0632, 49.2098`) in `assets/js/main.js`. Replace `CENTRE` with the Centre's exact
+   longitude/latitude before launch.
 
 ## Deploy
 

@@ -229,167 +229,172 @@
   });
 
   /* ============================================================
-     ENRICHMENT MODULES — powered by open-source libraries
+     ENRICHMENT MODULES — powered by niche open-source libraries
+       · MapLibre GL JS (BSD-3) + OpenFreeMap ..... vector map
+       · BaguetteBox.js (MIT) ..................... gallery lightbox
+       · Keen Slider (MIT) ........................ testimonials carousel
+       · Frappe Charts (MIT) ...................... donation donut chart
+       · Iconoir (MIT) ............................ icons (inlined SVG)
+       · PristineJS (MIT) ......................... form validation
      Each module is guarded so a page that omits a library (or a
      CDN that fails to load) degrades gracefully.
      ============================================================ */
 
-  /* ── Lucide icon system ── */
-  function setupIcons() {
-    if (typeof lucide === 'undefined' || !lucide.createIcons) return;
-    lucide.createIcons();
-  }
-
-  /* ── GLightbox photo gallery ── */
-  function setupGallery() {
-    if (typeof GLightbox === 'undefined') return;
-    if (!document.querySelector('.glightbox')) return;
-    GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      zoomable: true,
-      draggable: true,
-      openEffect: 'zoom',
-      closeEffect: 'fade',
-    });
-  }
-
-  /* ── Swiper testimonials carousel ── */
-  function setupTestimonials() {
-    if (typeof Swiper === 'undefined') return;
-    const el = document.querySelector('.testimonial-swiper');
-    if (!el) return;
-
-    new Swiper(el, {
-      loop: true,
-      autoHeight: true,
-      spaceBetween: 24,
-      grabCursor: true,
-      keyboard: { enabled: true },
-      a11y: { enabled: true, prevSlideMessage: 'Previous testimonial', nextSlideMessage: 'Next testimonial' },
-      autoplay: prefersReduced ? false : { delay: 6500, disableOnInteraction: false, pauseOnMouseEnter: true },
-      pagination: { el: '.testimonial-pagination', clickable: true },
-      navigation: { nextEl: '.testimonial-next', prevEl: '.testimonial-prev' },
-    });
-  }
-
-  /* ── Chart.js donation transparency chart ── */
-  function setupImpactChart() {
-    if (typeof Chart === 'undefined') return;
-    const canvas = document.getElementById('impact-chart');
-    if (!canvas) return;
-
-    new Chart(canvas, {
-      type: 'doughnut',
-      data: {
-        labels: ['Sessions & snacks', 'Holiday programme', 'Equipment & venue', 'Volunteer training'],
-        datasets: [{
-          data: [40, 32, 20, 8],
-          backgroundColor: ['#3FA9BF', '#E8A33D', '#12708C', '#7FCBD9'],
-          borderColor: 'rgba(255, 255, 255, 0.16)',
-          borderWidth: 2,
-          hoverOffset: 8,
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '62%',
-        animation: prefersReduced ? false : { animateRotate: true, duration: 1400, easing: 'easeOutQuart' },
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              color: 'rgba(242, 247, 248, 0.82)',
-              font: { family: "'Inter', sans-serif", size: 12 },
-              padding: 14,
-              usePointStyle: true,
-              pointStyle: 'rectRounded',
-              boxWidth: 10,
-              boxHeight: 10,
-            },
-          },
-          tooltip: {
-            backgroundColor: '#071A28',
-            padding: 12,
-            cornerRadius: 8,
-            displayColors: false,
-            titleFont: { family: "'Inter', sans-serif", weight: '600' },
-            bodyFont: { family: "'IBM Plex Mono', monospace", size: 13 },
-            callbacks: {
-              label: (ctx) => ' ' + ctx.parsed + '% of spending',
-            },
-          },
-        },
-      },
-    });
-  }
-
-  /* ── Leaflet + OpenStreetMap interactive map(s) ── */
+  /* ── MapLibre GL JS + OpenFreeMap (key-free vector tiles) ── */
   function setupMaps() {
-    if (typeof L === 'undefined') return;
+    if (typeof maplibregl === 'undefined') return;
     const nodes = document.querySelectorAll('[data-map]');
     if (!nodes.length) return;
 
-    const CENTRE = [49.2098, -2.0632]; // Maufant, St Saviour, Jersey (approx.)
+    // Maufant, St Saviour, Jersey — [lng, lat] (approximate)
+    const CENTRE = [-2.0632, 49.2098];
     const POPUP =
       '<strong>Maufant Variety Youth Centre</strong>' +
       'La Grande Route de St Martin<br>St Saviour, Jersey JE2 7GT';
 
     nodes.forEach((node) => {
-      const map = L.map(node, {
+      const map = new maplibregl.Map({
+        container: node,
+        style: 'https://tiles.openfreemap.org/styles/liberty',
         center: CENTRE,
         zoom: 14,
-        scrollWheelZoom: false,
-        attributionControl: true,
+        scrollZoom: false,
+        attributionControl: { compact: true },
       });
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
-      }).addTo(map);
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
-      L.marker(CENTRE).addTo(map).bindPopup(POPUP).openPopup();
+      const marker = new maplibregl.Marker({ color: '#12708C' })
+        .setLngLat(CENTRE)
+        .setPopup(new maplibregl.Popup({ offset: 30, closeButton: true }).setHTML(POPUP))
+        .addTo(map);
+
+      map.on('load', () => marker.togglePopup());
     });
   }
 
-  /* ── Just-validate: contact form ── */
+  /* ── BaguetteBox.js gallery lightbox ── */
+  function setupGallery() {
+    if (typeof baguetteBox === 'undefined') return;
+    if (!document.querySelector('.gallery-grid')) return;
+
+    baguetteBox.run('.gallery-grid', {
+      animation: 'fadeIn',
+      noScrollbars: true,
+      buttons: true,
+      captions: true,
+      overlayBackgroundColor: 'rgba(7, 26, 40, 0.94)',
+      filter: /^.+\.(svg|jpe?g|png|gif|webp)$/i,
+    });
+  }
+
+  /* ── Keen Slider testimonials carousel ── */
+  function setupTestimonials() {
+    if (typeof KeenSlider === 'undefined') return;
+    const el = document.querySelector('.testimonial-slider');
+    if (!el) return;
+
+    const dots = document.querySelector('.testimonial-dots');
+    const total = el.querySelectorAll('.keen-slider__slide').length;
+
+    const slider = new KeenSlider(el, {
+      loop: true,
+      slides: { perView: 1 },
+      created(s) {
+        if (!dots) return;
+        dots.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'testimonial-dot';
+          dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+          dot.addEventListener('click', () => s.moveToIdx(i));
+          dots.appendChild(dot);
+        }
+      },
+      slideChanged(s) {
+        if (!dots) return;
+        const rel = s.track.details.rel;
+        dots.querySelectorAll('.testimonial-dot').forEach((d, i) => {
+          d.classList.toggle('testimonial-dot--active', i === rel);
+        });
+      },
+    });
+
+    const prev = document.querySelector('.testimonial-prev');
+    const next = document.querySelector('.testimonial-next');
+    if (prev) prev.addEventListener('click', () => slider.prev());
+    if (next) next.addEventListener('click', () => slider.next());
+
+    if (!prefersReduced) {
+      let timer = null;
+      const start = () => { timer = setInterval(() => slider.next(), 6500); };
+      const stop = () => { clearInterval(timer); timer = null; };
+      el.addEventListener('mouseenter', stop);
+      el.addEventListener('mouseleave', start);
+      el.addEventListener('focusin', stop);
+      el.addEventListener('focusout', start);
+      start();
+    }
+  }
+
+  /* ── Frappe Charts donation donut ── */
+  function setupImpactChart() {
+    if (typeof frappe === 'undefined' || !frappe.Chart) return;
+    const el = document.getElementById('impact-chart');
+    if (!el) return;
+
+    // Labels are kept short: Frappe Charts truncates legend text that
+    // overflows the SVG width.
+    const chart = new frappe.Chart(el, {
+      type: 'donut',
+      height: 250,
+      radius: 88,
+      colors: ['#3FA9BF', '#E8A33D', '#12708C', '#7FCBD9'],
+      data: {
+        labels: ['Sessions', 'Holidays', 'Equipment', 'Training'],
+        datasets: [{ values: [40, 32, 20, 8] }],
+      },
+      tooltipOptions: {
+        formatTooltipY: (d) => d + '%',
+      },
+    });
+
+    // Frappe Charts v1.6.x redraws from a ResizeObserver that throws a
+    // NotFoundError when the container is resized. Disconnect it; the SVG is
+    // scaled by CSS (`max-width: 100%`) instead.
+    if (chart && chart.resizeObserver && typeof chart.resizeObserver.disconnect === 'function') {
+      chart.resizeObserver.disconnect();
+    }
+  }
+
+  /* ── PristineJS contact-form validation ── */
   function setupFormValidation() {
-    if (typeof JustValidate === 'undefined') return;
+    if (typeof Pristine === 'undefined') return;
     const form = document.getElementById('contact-form');
     if (!form) return;
 
     const success = document.getElementById('contact-success');
 
-    const validator = new JustValidate(form, {
-      errorFieldCssClass: 'just-validate-error-field',
-      errorLabelCssClass: 'just-validate-error-label',
-      focusInvalidField: true,
-      lockForm: false,
+    const pristine = new Pristine(form, {
+      classTo: 'field-wrap',
+      errorClass: 'pristine-error',
+      errorTextParent: 'field-wrap',
+      errorTextClass: 'pristine-error-text',
     });
 
-    validator
-      .addField('#firstName', [{ rule: 'required', errorMessage: 'Please enter your first name' }])
-      .addField('#lastName', [{ rule: 'required', errorMessage: 'Please enter your last name' }])
-      .addField('#email', [
-        { rule: 'required', errorMessage: 'Please enter your email address' },
-        { rule: 'email', errorMessage: 'That email address does not look right' },
-      ])
-      .addField('#subject', [{ rule: 'required', errorMessage: 'Please choose a topic' }])
-      .addField('#message', [
-        { rule: 'required', errorMessage: 'Please tell us a little more' },
-        { rule: 'minLength', value: 10, errorMessage: 'A little more detail helps us help you' },
-      ])
-      .onSuccess(() => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (pristine.validate()) {
         // Static site: no backend. Show an honest confirmation instead of faking a send.
         if (success) {
           success.classList.add('form-success--visible');
           success.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
         }
         form.reset();
-        validator.refresh(); // clear field states
-      });
+        pristine.reset();
+      }
+    });
   }
 
   /* ── Init ── */
@@ -401,11 +406,10 @@
     highlightActiveNav();
 
     // Enrichment modules
-    setupIcons();
+    setupMaps();
     setupGallery();
     setupTestimonials();
     setupImpactChart();
-    setupMaps();
     setupFormValidation();
   });
 })();
