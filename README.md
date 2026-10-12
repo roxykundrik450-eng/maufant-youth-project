@@ -4,6 +4,8 @@ A static, deployable website for **Maufant Youth Project** — a volunteer-run y
 charity based at the Maufant Variety Youth Centre, St Saviour, Jersey
 (Registered Charity No. 340, AJC member AJC505).
 
+**Live: <https://maufantyouth.org>** · Contact: `chat@maufantyouth.org`
+
 This site was adapted from the open-source
 [Charitize — Charity / NGO HTML Template](https://github.com/uiuxlabz/charity-html-template)
 (MIT-style licence, free for personal and commercial use, attribution appreciated).
@@ -116,14 +118,39 @@ before launch:
 
 ## Deploy
 
-The repo is ready for **GitHub Pages** (a workflow is included), Netlify, Vercel,
-Cloudflare Pages, or any static host. Enable Pages with "deploy from branch",
-root directory, and the site will go live.
+**Live at <https://maufantyouth.org>** — hosted on **Cloudflare Pages**
+(project `maufant-youth-project`, fallback URL `maufant-youth-project.pages.dev`).
+
+To publish an update:
 
 ```bash
-# e.g. Netlify
-npx netlify deploy --dir=. --prod
+# from the repo root, upload a clean copy of the site
+node --use-env-proxy "$(npm root -g)/wrangler/bin/wrangler.js" pages deploy <dir> \
+  --project-name=maufant-youth-project --branch=main --commit-dirty=true
 ```
+
+`--use-env-proxy` is required when a local HTTP proxy is configured — Node's `fetch`
+does not read `HTTP_PROXY`/`HTTPS_PROXY` without it.
+
+A GitHub Actions workflow for GitHub Pages is also included (`.github/workflows/deploy.yml`)
+if you ever want a second host; the Cloudflare Pages deployment is the production one.
+
+### Email
+
+Mail for **maufantyouth.org** is handled by **Cloudflare Email Routing**, which forwards
+everything to the `cloud-mail` Worker. Active rules:
+
+| Address | Purpose |
+|---|---|
+| `chat@` | **General enquiries — the address published on the site** |
+| `info@`, `enquiries@`, `sayhello@` | Conventional aliases for formal correspondence (grant forms, Charity Commissioner, bank) |
+| `safeguarding@` | Safeguarding matters |
+| `volunteers@` | Volunteer enquiries |
+| `donate@` | Donations and fundraising |
+| `thedoor@`, `thecentre@`, `hello@` | Extra aliases |
+
+A catch-all rule forwards anything unmatched, so no address is silently lost. Rules are
+edited in the Cloudflare dashboard under the zone's **Email** tab.
 
 ## Accessibility
 
