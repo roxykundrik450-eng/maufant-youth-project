@@ -6,6 +6,9 @@
   <title>Maufant Youth Project — Youth Work in St Saviour, Jersey</title>
   <meta name="description" content="Maufant Youth Project is a Jersey registered charity (No. 340) running youth clubs and activities for young people aged 9–18 at the Maufant Variety Youth Centre, St Saviour.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <!-- Open-source libraries: GLightbox (MIT) + Swiper (MIT) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/base.css">
 </head>
 <body>
@@ -192,6 +195,68 @@
     </div>
   </section>
 
+  <!-- ═══════ GALLERY (GLightbox) ═══════ -->
+  <section class="section" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header rise" style="text-align:center;">
+        <span class="label">Life at the Centre</span>
+        <h2>A Week in <span class="accent-text">Pictures</span></h2>
+        <div class="divider divider--center"></div>
+        <p class="section-intro" style="margin:0 auto;">Tap any image to open the gallery. These are illustrations for now &mdash; real photographs of the Centre will replace them once member consents are in place.</p>
+      </div>
+      <div class="gallery-grid stagger">
+        <a href="assets/img/centre.svg" class="gallery-item glightbox" data-gallery="centre" data-type="image"
+           data-title="The Maufant Variety Youth Centre" data-description="Our home on La Grande Route de St Martin, St Saviour.">
+          <img src="assets/img/centre.svg" alt="Illustration of the Maufant Variety Youth Centre building" loading="lazy">
+          <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span></span>
+          <span class="gallery-item__caption">The Centre</span>
+        </a>
+        <a href="assets/img/programme-dropin.svg" class="gallery-item glightbox" data-gallery="centre" data-type="image"
+           data-title="Tuesday juniors session" data-description="Games, craft and team challenges for ages 9&ndash;12.">
+          <img src="assets/img/programme-dropin.svg" alt="Young people at a drop-in session" loading="lazy">
+          <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span></span>
+          <span class="gallery-item__caption">Juniors, Tuesdays</span>
+        </a>
+        <a href="assets/img/programme-holiday.svg" class="gallery-item glightbox" data-gallery="centre" data-type="image"
+           data-title="Holiday programme" data-description="Trips, beach days and workshops through the school holidays.">
+          <img src="assets/img/programme-holiday.svg" alt="Holiday activity programme" loading="lazy">
+          <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span></span>
+          <span class="gallery-item__caption">Holiday programme</span>
+        </a>
+        <a href="assets/img/holiday-beach.svg" class="gallery-item glightbox" data-gallery="centre" data-type="image"
+           data-title="Beach &amp; coastal days" data-description="Low-tide rockpooling and beach games on the Jersey coast.">
+          <img src="assets/img/holiday-beach.svg" alt="Beach day on the Jersey coast" loading="lazy">
+          <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span></span>
+          <span class="gallery-item__caption">Beach days</span>
+        </a>
+        <a href="assets/img/holiday-workshop.svg" class="gallery-item glightbox" data-gallery="centre" data-type="image"
+           data-title="Skills &amp; making" data-description="Cooking, music and creative workshops led by volunteers.">
+          <img src="assets/img/holiday-workshop.svg" alt="Workshop activity for young people" loading="lazy">
+          <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span></span>
+          <span class="gallery-item__caption">Skills &amp; making</span>
+        </a>
+        <a href="assets/img/about-session.svg" class="gallery-item glightbox" data-gallery="centre" data-type="image"
+           data-title="Friday drop-in night" data-description="Open club night for every age group, 17:00&ndash;20:00.">
+          <img src="assets/img/about-session.svg" alt="Members at a Friday club night session" loading="lazy">
+          <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span></span>
+          <span class="gallery-item__caption">Friday drop-in</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════ STORY BAND ═══════ -->
   <section class="section" style="background:var(--channel); color:var(--text-on-dark); position:relative; overflow:hidden;">
     <div style="position:absolute; top:-120px; right:-120px; width:440px; height:440px; border-radius:50%; background:rgba(63,169,191,0.08); pointer-events:none;"></div>
@@ -300,21 +365,72 @@
     </div>
   </section>
 
-  <!-- ═══════ QUOTE ═══════ -->
+  <!-- ═══════ TESTIMONIALS (Swiper) ═══════ -->
   <section class="section--compact" style="background:var(--mist);">
     <div class="container container--narrow">
-      <div class="quote rise">
-        <p class="quote__text">
-          It's the one place in the week where I'm not being told what to do. You just turn up,
-          and there's always someone to talk to. I've made my actual best friends here.
-        </p>
-        <div class="quote__author">
-          <img src="assets/img/quote-member.svg" alt="" class="quote__avatar" loading="lazy">
-          <div>
-            <div class="quote__name">A member, aged 15</div>
-            <div class="quote__title">Maufant Youth Project</div>
+      <div class="section-header rise" style="text-align:center;">
+        <span class="label">In Their Words</span>
+        <h2>What Members &amp; <span class="accent-text">Families Say</span></h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="swiper testimonial-swiper rise">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="quote">
+              <p class="quote__text">
+                It's the one place in the week where I'm not being told what to do. You just turn up,
+                and there's always someone to talk to. I've made my actual best friends here.
+              </p>
+              <div class="quote__author">
+                <img src="assets/img/quote-member.svg" alt="" class="quote__avatar" loading="lazy">
+                <div>
+                  <div class="quote__name">A member, aged 15</div>
+                  <div class="quote__title">Maufant Youth Project</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="quote">
+              <p class="quote__text">
+                What I value most is that the same faces are there every week. My son is autistic and
+                they never made him feel like a problem &mdash; they just quietly made room for him.
+              </p>
+              <div class="quote__author">
+                <img src="assets/img/quote-member.svg" alt="" class="quote__avatar" loading="lazy">
+                <div>
+                  <div class="quote__name">A parent</div>
+                  <div class="quote__title">St Saviour</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="quote">
+              <p class="quote__text">
+                I started volunteering on a Tuesday because I had a free evening. Three years later
+                it's the best part of my week &mdash; and the young people have taught me more than
+                I've taught them.
+              </p>
+              <div class="quote__author">
+                <img src="assets/img/quote-member.svg" alt="" class="quote__avatar" loading="lazy">
+                <div>
+                  <div class="quote__name">A session volunteer</div>
+                  <div class="quote__title">Youth Work Team</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="testimonial-pagination"></div>
+      </div>
+      <div class="testimonial-nav rise">
+        <button class="testimonial-prev" type="button" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        </button>
+        <button class="testimonial-next" type="button" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -379,6 +495,36 @@
           <div style="font-size:var(--text-xs); color:rgba(255,255,255,0.65); margin-top:4px;">Funds a holiday trip place</div>
         </div>
       </div>
+      <div class="grid-split rise rise--delay-3" style="max-width:940px; margin:0 auto var(--space-2xl); text-align:left;">
+        <div class="chart-card">
+          <div class="label" style="color:var(--seaglass-light); margin-bottom:var(--space-md);">Where Your Money Goes</div>
+          <div class="chart-wrap">
+            <canvas id="impact-chart" role="img" aria-label="Chart showing how donations are spent: sessions and snacks 40%, holiday programme 32%, equipment and venue 20%, volunteer training 8%"></canvas>
+          </div>
+        </div>
+        <div>
+          <h3 style="color:var(--white); margin-bottom:var(--space-md);">Transparent to the last pound</h3>
+          <p style="color:rgba(255,255,255,0.8); font-size:var(--text-sm); line-height:1.8; margin-bottom:var(--space-lg);">
+            Every pound given to Maufant Youth Project is spent on young people in the east of the
+            Island. We hold no reserves beyond one term's running costs, and our accounts are filed
+            with the Jersey Charity Commissioner as required.
+          </p>
+          <ul style="display:flex; flex-direction:column; gap:var(--space-sm);">
+            <li style="display:flex; gap:var(--space-sm); align-items:flex-start; color:rgba(255,255,255,0.82); font-size:var(--text-sm);">
+              <i data-lucide="check" class="icon" style="color:var(--seaglass-light); margin-top:3px;"></i>
+              <span>No paid staff &mdash; trustees and session leaders are all volunteers</span>
+            </li>
+            <li style="display:flex; gap:var(--space-sm); align-items:flex-start; color:rgba(255,255,255,0.82); font-size:var(--text-sm);">
+              <i data-lucide="check" class="icon" style="color:var(--seaglass-light); margin-top:3px;"></i>
+              <span>Holiday places are free to members, regardless of family income</span>
+            </li>
+            <li style="display:flex; gap:var(--space-sm); align-items:flex-start; color:rgba(255,255,255,0.82); font-size:var(--text-sm);">
+              <i data-lucide="check" class="icon" style="color:var(--seaglass-light); margin-top:3px;"></i>
+              <span>Registered Jersey Charity No. 340 &middot; AJC member AJC505</span>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="rise rise--delay-3">
         <a href="contact.html" class="btn btn--amber btn--large">Get in Touch to Donate</a>
         <p style="color:rgba(255,255,255,0.5); font-size:var(--text-xs); margin-top:var(--space-md); font-family:var(--font-mono);">
@@ -439,6 +585,11 @@
     </div>
   </footer>
 
+  <!-- Open-source libraries: GLightbox (MIT) · Swiper (MIT) · Chart.js (MIT) · Lucide (ISC) -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
   <title>Sessions &amp; Activities — Maufant Youth Project, Jersey</title>
   <meta name="description" content="Weekly youth club sessions and holiday activities at Maufant Youth Project, St Saviour, Jersey. Free to attend for young people aged 9–18.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <!-- Open-source library: Leaflet (BSD-2) — interactive map, no API key -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/base.css">
 </head>
 <body>
@@ -242,9 +244,7 @@
             <a href="tel:+441534852964" style="color:var(--seaglass-light);">01534 852964</a>
           </p>
         </div>
-        <div style="background:rgba(242,247,248,0.06); border:1px solid rgba(242,247,248,0.12); border-radius:var(--radius-lg); height:280px; display:flex; align-items:center; justify-content:center; color:rgba(242,247,248,0.35); font-family:var(--font-mono); font-size:var(--text-sm); text-align:center; padding:var(--space-lg);">
-          Map placeholder &mdash; embed a Google Maps iframe<br>for La Grande Route de St Martin, St Saviour
-        </div>
+        <div class="map-embed" data-map role="region" aria-label="Interactive map showing the location of Maufant Variety Youth Centre, St Saviour, Jersey"></div>
       </div>
     </div>
   </section>
@@ -300,6 +300,8 @@
     </div>
   </footer>
 
+  <!-- Open-source library: Leaflet (BSD-2) + OpenStreetMap tiles -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

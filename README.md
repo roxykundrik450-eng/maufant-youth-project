@@ -27,6 +27,25 @@ maufant-youth-project/
     img/              SVG illustrations and logos (all self-hosted, zero external images)
 ```
 
+### Open-source components
+
+The site stays dependency-free at build time — no bundler, no `npm install` — but it is
+enriched by six small, permissively-licensed open-source libraries loaded from a CDN.
+Every integration is guarded in `assets/js/main.js`, so if a CDN is unreachable the page
+still works and simply drops that enhancement.
+
+| Library | Licence | Used for | Where |
+|---|---|---|---|
+| [Leaflet](https://leafletjs.com) + [OpenStreetMap](https://www.openstreetmap.org) | BSD-2 / ODbL | Interactive location map — no API key, no Google | `sessions.html`, `contact.html` |
+| [GLightbox](https://biati-digital.github.io/glightbox/) | MIT | Photo lightbox for the gallery | `index.html` |
+| [Swiper](https://swiperjs.com) | MIT | Testimonials carousel | `index.html` |
+| [Chart.js](https://www.chartjs.org) | MIT | "Where your money goes" donation chart | `index.html` |
+| [Lucide](https://lucide.dev) | ISC | Icon system (replaces the old emoji glyphs) | all pages |
+| [Just-validate](https://just-validate.dev) | MIT | Contact-form validation | `contact.html` |
+
+To self-host instead of using the CDN, download each library into `assets/vendor/` and
+swap the `<script>`/`<link>` URLs in the page `<head>` and before `</body>`.
+
 ## Local preview
 
 Double-click `index.html`, or serve the folder:
@@ -67,13 +86,17 @@ before launch:
    under the submit button.
 3. **Session times** — verify the Tue/Wed/Thu/Fri timetable and age groups
    against the current term's rota.
-4. **Photos** — the images are self-contained SVG illustrations. Swap in real
-   photographs of the Centre and its members, with appropriate consents in place.
+4. **Photos** — the images are self-contained SVG illustrations, shown in the
+   "Life at the Centre" gallery. Swap in real photographs of the Centre and its
+   members (with consents in place) and the GLightbox gallery will pick them up.
 5. **Social links** — the footer Facebook/Instagram icons are placeholders (`#`).
 6. **Safeguarding statement** — the note on the contact page should be reviewed
    or replaced with the charity's own approved wording.
 7. **Terms/privacy** — small charities collecting email addresses should publish
    a short privacy notice describing what is done with them.
+8. **Map coordinates** — the Leaflet map marker uses approximate coordinates for
+   Maufant (`49.2098, -2.0632`) in `assets/js/main.js`. Replace `CENTRE` with the
+   Centre's exact latitude/longitude before launch.
 
 ## Deploy
 

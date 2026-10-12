@@ -6,6 +6,8 @@
   <title>Contact — Maufant Youth Project, St Saviour, Jersey</title>
   <meta name="description" content="Contact Maufant Youth Project: enquiries about sessions, volunteering, donating or referring a young person. Maufant Variety Youth Centre, St Saviour, Jersey.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <!-- Open-source library: Leaflet (BSD-2) — interactive map, no API key -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/base.css">
 </head>
 <body>
@@ -61,7 +63,7 @@
 
           <div style="display:flex; flex-direction:column; gap:var(--space-xl);">
             <div style="display:flex; gap:var(--space-lg); align-items:flex-start;">
-              <div style="width:48px; height:48px; background:var(--tide-glow); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.2rem;">&#9743;</div>
+              <div class="contact-icon"><i data-lucide="phone" class="icon"></i></div>
               <div>
                 <h5 style="margin-bottom:2px;">Youth Centre</h5>
                 <p style="color:var(--text-secondary); font-size:var(--text-sm);">
@@ -72,7 +74,7 @@
             </div>
 
             <div style="display:flex; gap:var(--space-lg); align-items:flex-start;">
-              <div style="width:48px; height:48px; background:var(--tide-glow); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.2rem;">&#9742;</div>
+              <div class="contact-icon"><i data-lucide="phone-call" class="icon"></i></div>
               <div>
                 <h5 style="margin-bottom:2px;">Project Enquiries</h5>
                 <p style="color:var(--text-secondary); font-size:var(--text-sm);">
@@ -83,7 +85,7 @@
             </div>
 
             <div style="display:flex; gap:var(--space-lg); align-items:flex-start;">
-              <div style="width:48px; height:48px; background:var(--tide-glow); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.2rem;">&#9993;</div>
+              <div class="contact-icon"><i data-lucide="mail" class="icon"></i></div>
               <div>
                 <h5 style="margin-bottom:2px;">Email</h5>
                 <p style="color:var(--text-secondary); font-size:var(--text-sm);">
@@ -94,7 +96,7 @@
             </div>
 
             <div style="display:flex; gap:var(--space-lg); align-items:flex-start;">
-              <div style="width:48px; height:48px; background:var(--tide-glow); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.2rem;">&#9873;</div>
+              <div class="contact-icon"><i data-lucide="map-pin" class="icon"></i></div>
               <div>
                 <h5 style="margin-bottom:2px;">The Centre</h5>
                 <p style="color:var(--text-secondary); font-size:var(--text-sm); line-height:1.7;">
@@ -106,7 +108,7 @@
             </div>
 
             <div style="display:flex; gap:var(--space-lg); align-items:flex-start;">
-              <div style="width:48px; height:48px; background:var(--tide-glow); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.2rem;">&#9878;</div>
+              <div class="contact-icon"><i data-lucide="building-2" class="icon"></i></div>
               <div>
                 <h5 style="margin-bottom:2px;">Registered Address</h5>
                 <p style="color:var(--text-secondary); font-size:var(--text-sm); line-height:1.7;">
@@ -124,7 +126,7 @@
           <h3 style="margin-bottom:var(--space-sm);">Send Us a Message</h3>
           <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:var(--space-xl);">Tell us how we can help, or how you'd like to get involved. We'll come back to you as soon as a volunteer is free.</p>
 
-          <form onsubmit="return false;" style="display:flex; flex-direction:column; gap:var(--space-lg);">
+          <form id="contact-form" onsubmit="return false;" style="display:flex; flex-direction:column; gap:var(--space-lg);">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-lg);">
               <div>
                 <label for="firstName" style="display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-xs); color:var(--text-primary);">First Name *</label>
@@ -161,6 +163,12 @@
             </div>
 
             <button type="submit" class="btn btn--primary btn--large" style="width:100%;">Send Message</button>
+            <div id="contact-success" class="form-success" role="status" aria-live="polite">
+              <strong>Thank you &mdash; your message has been checked and is ready to send.</strong><br>
+              This site is a static demo with no mail server connected, so nothing has been transmitted yet.
+              On the live site your message would reach the trustees at
+              <span class="mono">william.sutton295@gmail.com</span>.
+            </div>
             <p style="font-size:var(--text-xs); color:var(--text-muted); text-align:center; font-family:var(--font-mono);">
               Form is a static demo &mdash; connect it to your own mail service before launch.
             </p>
@@ -179,9 +187,7 @@
           Maufant Variety Youth Centre, La Grande Route de St Martin, St Saviour, Jersey JE2 7GT<br>
           On the main road heading east out of St&nbsp;Helier &mdash; there is parking on site.
         </p>
-        <div style="background:rgba(242,247,248,0.06); border:1px solid rgba(242,247,248,0.12); border-radius:var(--radius-lg); height:260px; display:flex; align-items:center; justify-content:center; color:rgba(242,247,248,0.32); font-family:var(--font-mono); font-size:var(--text-sm);">
-          Map placeholder &mdash; embed your Google Maps iframe here
-        </div>
+        <div class="map-embed" data-map role="region" aria-label="Interactive map showing the location of Maufant Variety Youth Centre, St Saviour, Jersey" style="margin-top:var(--space-lg);"></div>
       </div>
     </div>
   </section>
@@ -253,6 +259,10 @@
     </div>
   </footer>
 
+  <!-- Open-source libraries: Leaflet (BSD-2) · Just-validate (MIT) · Lucide (ISC) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

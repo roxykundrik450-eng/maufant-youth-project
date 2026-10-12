@@ -913,3 +913,192 @@ h5 { font-size: var(--text-lg); }
   .rise, .stagger { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ============================================================
+   ENRICHMENT LAYER
+   Powered by open-source projects (all free / permissive):
+     · Leaflet (BSD-2) + OpenStreetMap ....... interactive map
+     · GLightbox (MIT) ...................... photo lightbox
+     · Swiper (MIT) ......................... testimonials carousel
+     · Chart.js (MIT) ....................... donation transparency chart
+     · Lucide (ISC) ......................... icon system
+     · Just-validate (MIT) .................. contact form validation
+   ============================================================ */
+
+/* ── Layout utility for enrichment blocks ── */
+.grid-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .grid-split { grid-template-columns: 1fr; }
+}
+
+/* ── Lucide icons ── */
+.icon { width: 1.25em; height: 1.25em; flex-shrink: 0; }
+
+.icon-tile {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--tide-glow);
+  color: var(--tide);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+}
+.icon-tile svg { width: 26px; height: 26px; stroke-width: 1.75; }
+
+.contact-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--tide-glow);
+  color: var(--tide);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg { width: 22px; height: 22px; stroke-width: 1.9; }
+
+.btn svg { width: 1.05em; height: 1.05em; }
+
+/* ── Photo gallery + GLightbox ── */
+.gallery-item { display: block; cursor: zoom-in; }
+
+.gallery-item__caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  background: linear-gradient(to top, rgba(7, 26, 40, 0.86), rgba(7, 26, 40, 0));
+  color: var(--mist);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: left;
+  transform: translateY(8px);
+  opacity: 0.9;
+  transition: transform var(--duration-normal) var(--ease-out),
+              opacity var(--duration-normal) var(--ease-out);
+}
+.gallery-item:hover .gallery-item__caption { transform: translateY(0); opacity: 1; }
+
+.gallery-item__icon svg { width: 20px; height: 20px; color: var(--tide); stroke-width: 2; }
+
+.glightbox-clean .gslide-description { background: var(--channel-dark); }
+.glightbox-clean .gslide-title {
+  font-family: var(--font-display);
+  color: var(--mist);
+  font-weight: 700;
+}
+.glightbox-clean .gslide-desc { font-family: var(--font-body); color: rgba(242, 247, 248, 0.72); }
+
+/* ── Testimonials (Swiper) ── */
+.testimonial-swiper { padding-bottom: var(--space-3xl); overflow: hidden; }
+.testimonial-swiper .swiper-slide { height: auto; }
+.testimonial-swiper .swiper-slide .quote { height: 100%; }
+
+.testimonial-pagination { bottom: 0 !important; }
+.testimonial-pagination .swiper-pagination-bullet {
+  width: 8px; height: 8px;
+  background: var(--text-muted);
+  opacity: 0.35;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.testimonial-pagination .swiper-pagination-bullet-active {
+  background: var(--sandstone);
+  opacity: 1;
+  width: 26px;
+  border-radius: 4px;
+}
+
+.testimonial-nav {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+.testimonial-nav button {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--white);
+  color: var(--tide);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.testimonial-nav button:hover { background: var(--tide); color: var(--white); transform: translateY(-2px); }
+.testimonial-nav svg { width: 20px; height: 20px; }
+
+/* ── Donation transparency chart (Chart.js) ── */
+.chart-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+}
+.chart-wrap { position: relative; height: 300px; }
+
+/* ── Interactive map (Leaflet + OpenStreetMap) ── */
+.map-embed {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 340px;
+  border: 1px solid rgba(242, 247, 248, 0.14);
+  background: var(--mist-dark);
+  z-index: 0;
+}
+.map-embed .leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-body);
+  background: var(--mist-dark);
+}
+.map-embed .leaflet-popup-content-wrapper { border-radius: var(--radius-md); box-shadow: var(--shadow-lg); }
+.map-embed .leaflet-popup-content {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  margin: 12px 14px;
+  color: var(--text-primary);
+}
+.map-embed .leaflet-popup-content strong { font-family: var(--font-display); display: block; margin-bottom: 2px; }
+.map-embed .leaflet-control-attribution { font-size: 10px; }
+
+/* ── Contact form validation (Just-validate) ── */
+.just-validate-error-field {
+  border-color: #C0392B !important;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12) !important;
+}
+.just-validate-error-label {
+  display: block;
+  color: #C0392B;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  margin-top: 5px;
+}
+
+.form-success {
+  display: none;
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  background: rgba(18, 112, 140, 0.1);
+  border-left: 3px solid var(--tide);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.form-success--visible { display: block; }
+
+/* ── Responsive: enrichment components ── */
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .map-embed { height: 280px; }
+  .chart-wrap { height: 260px; }
+  .chart-card { padding: var(--space-lg); }
+  .testimonial-swiper .quote { padding: var(--space-2xl); }
+}
