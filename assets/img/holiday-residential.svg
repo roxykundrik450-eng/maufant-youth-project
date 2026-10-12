@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="Illustration of tents and hills on a residential trip"><defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FCBD9"/>
+      <stop offset="60%" stop-color="#3FA9BF"/>
+      <stop offset="100%" stop-color="#12708C"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#sky)"/><circle cx="110" cy="90" r="38" fill="#E8A33D"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(0 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(45 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(90 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(135 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(180 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(225 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(270 110 90)"/><line x1="110" y1="42" x2="110" y2="28" stroke="#E8A33D" stroke-width="4" stroke-linecap="round" transform="rotate(315 110 90)"/><path d="M 0 300 L 140 152 L 260 300 Z" fill="#0B5468"/>
+      <path d="M 170 300 L 320 118 L 470 300 Z" fill="#12708C"/><path d="M 320 118 L 282 176 L 300 168 L 318 190 L 340 168 L 358 176 Z" fill="#F2F7F8"/><path d="M 430 300 L 500 190 L 570 300 Z" fill="#E8A33D"/>
+      <path d="M 500 190 L 500 300 L 568 300 Z" fill="#F2BC68"/>
+      <path d="M 486 300 L 500 252 L 514 300 Z" fill="#071A28"/><path d="M0 300 C 100 324, 500 276, 600 302 L 600 450 L 0 450 Z" fill="#3FA9BF"/><text x="300" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+      font-size="26" font-weight="700" fill="#F2F7F8" letter-spacing="1">AWAY FROM HOME</text></svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Rounded sea-blue tile -->
+  <rect width="64" height="64" rx="15" fill="#12708C"/>
+  <!-- Jersey lighthouse (Corbière-style tower with light) -->
+  <path d="M32 9.5 L37.6 20.5 L26.4 20.5 Z" fill="#E8A33D"/>
+  <rect x="27.2" y="20.5" width="9.6" height="24" fill="#F2F7F8"/>
+  <rect x="26.2" y="26.5" width="11.6" height="3.4" fill="#3FA9BF"/>
+  <rect x="26.2" y="33" width="11.6" height="3.4" fill="#3FA9BF"/>
+  <!-- Light beam -->
+  <path d="M32 15 L14 10.5 L14 19.5 Z" fill="#E8A33D" opacity="0.35"/>
+  <path d="M32 15 L50 10.5 L50 19.5 Z" fill="#E8A33D" opacity="0.35"/>
+  <!-- Granite base -->
+  <rect x="23.5" y="44.5" width="17" height="5" rx="2.2" fill="#F2F7F8"/>
+  <!-- Waves -->
+  <path d="M13 54.5 q3.6 -3 7.2 0 t7.2 0 t7.2 0 t7.2 0 t7.2 0" fill="none" stroke="#3FA9BF" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

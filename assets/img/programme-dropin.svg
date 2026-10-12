@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="Illustration of young people at a drop-in session"><defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FCBD9"/>
+      <stop offset="60%" stop-color="#3FA9BF"/>
+      <stop offset="100%" stop-color="#12708C"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#sky)"/><circle cx="108" cy="356" r="19" fill="#E8A33D"/><path d="M 78 414 C 78 394, 93 386, 108 386 C 123 386, 138 394, 138 414 Z" fill="#E8A33D"/><circle cx="204" cy="356" r="19" fill="#F2F7F8"/><path d="M 174 414 C 174 394, 189 386, 204 386 C 219 386, 234 394, 234 414 Z" fill="#F2F7F8"/><circle cx="300" cy="356" r="19" fill="#F2BC68"/><path d="M 270 414 C 270 394, 285 386, 300 386 C 315 386, 330 394, 330 414 Z" fill="#F2BC68"/><circle cx="396" cy="356" r="19" fill="#F2F7F8"/><path d="M 366 414 C 366 394, 381 386, 396 386 C 411 386, 426 394, 426 414 Z" fill="#F2F7F8"/><circle cx="492" cy="356" r="19" fill="#E8A33D"/><path d="M 462 414 C 462 394, 477 386, 492 386 C 507 386, 522 394, 522 414 Z" fill="#E8A33D"/><ellipse cx="300" cy="392" rx="150" ry="34" fill="#F2F7F8" opacity="0.9"/><text x="300" y="118" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+      font-size="30" font-weight="700" fill="#F2F7F8" letter-spacing="1">DROP-IN SESSIONS</text></svg>

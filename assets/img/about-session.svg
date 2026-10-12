@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 600" width="450" height="600" role="img" aria-label="Illustration of members at a Friday club night session"><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FCBD9"/><stop offset="100%" stop-color="#12708C"/>
+    </linearGradient>
+    <defs><linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FCBD9"/><stop offset="100%" stop-color="#12708C"/>
+    </linearGradient></defs>
+    <rect width="450" height="600" fill="url(#room)"/><circle cx="225" cy="150" r="120" fill="#F2F7F8" opacity="0.12"/><circle cx="81" cy="377" r="17" fill="#E8A33D"/><path d="M 53 430 C 53 412, 67 405, 81 405 C 95 405, 109 412, 109 430 Z" fill="#E8A33D"/><circle cx="153" cy="377" r="17" fill="#F2F7F8"/><path d="M 125 430 C 125 412, 139 405, 153 405 C 167 405, 181 412, 181 430 Z" fill="#F2F7F8"/><circle cx="225" cy="377" r="17" fill="#F2BC68"/><path d="M 197 430 C 197 412, 211 405, 225 405 C 239 405, 253 412, 253 430 Z" fill="#F2BC68"/><circle cx="297" cy="377" r="17" fill="#F2F7F8"/><path d="M 269 430 C 269 412, 283 405, 297 405 C 311 405, 325 412, 325 430 Z" fill="#F2F7F8"/><circle cx="369" cy="377" r="17" fill="#E8A33D"/><path d="M 341 430 C 341 412, 355 405, 369 405 C 383 405, 397 412, 397 430 Z" fill="#E8A33D"/><ellipse cx="225" cy="440" rx="140" ry="30" fill="#F2F7F8" opacity="0.85"/><text x="225" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+      font-size="26" font-weight="700" fill="#F2F7F8" letter-spacing="1">FRIDAY</text>
+      <text x="225" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+      font-size="26" font-weight="700" fill="#F2F7F8" letter-spacing="1">CLUB NIGHT</text></svg>
