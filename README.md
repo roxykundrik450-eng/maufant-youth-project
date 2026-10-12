@@ -17,15 +17,29 @@ framework, no dependencies.** Open `index.html` in any modern browser and it wor
 
 ```
 maufant-youth-project/
-  index.html          Home — mission, what we do, sessions, donation CTA
+  index.html          Home — mission, what we do, gallery, sessions, donation CTA
   about.html          About — charitable objects, history, governance
   sessions.html       Sessions — weekly timetable, holiday programme, first visit
-  contact.html        Contact — venue details, form, safeguarding note
+  contact.html        Contact — venue details, map, form, safeguarding note
+  credits.html        Photo credits and licences
   assets/
     css/base.css      Design tokens + full component library
-    js/main.js        Nav, reveal animations, progress bar, counters
-    img/              SVG illustrations and logos (all self-hosted, zero external images)
+    js/main.js        Nav, reveals, counters, and all library integrations
+    img/              Logo, favicon and Jersey island outline (original SVG)
+    img/photos/       Freely-licensed photographs (credited in credits.html)
 ```
+
+### Photography
+
+All photographs on the site are freely licensed and sourced from
+[Wikimedia Commons](https://commons.wikimedia.org); each one is credited with its
+author and licence on [`credits.html`](credits.html). They show **Jersey scenery and
+generic youth-club activity** — deliberately not the Project's own members or premises,
+because publishing photographs of identifiable young people requires consent that a
+stock image cannot supply. The trustee and testimonial avatars are drawn as initials
+and icons for the same reason.
+
+Before launch these placeholders should be replaced with the charity's own photography.
 
 ### Open-source components
 
@@ -87,9 +101,10 @@ before launch:
    under the submit button.
 3. **Session times** — verify the Tue/Wed/Thu/Fri timetable and age groups
    against the current term's rota.
-4. **Photos** — the images are self-contained SVG illustrations, shown in the
-   "Life at the Centre" gallery. Swap in real photographs of the Centre and its
-   members (with consents in place) and the GLightbox gallery will pick them up.
+4. **Photos** — the site uses freely-licensed placeholder photographs (see
+   [`credits.html`](credits.html)). Swap in the Centre's own photography, taken with
+   appropriate consents, and update the credits page. The BaguetteBox gallery picks up
+   new files automatically.
 5. **Social links** — the footer Facebook/Instagram icons are placeholders (`#`).
 6. **Safeguarding statement** — the note on the contact page should be reviewed
    or replaced with the charity's own approved wording.
