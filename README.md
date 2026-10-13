@@ -22,7 +22,7 @@ maufant-youth-project/
   index.html          Home — mission, what we do, gallery, sessions, donation CTA
   about.html          About — charitable objects, history, governance
   sessions.html       Sessions — weekly timetable, holiday programme, first visit
-  contact.html        Contact — venue details, map, form, safeguarding note
+  contact.html        Contact — venue details, map, email button, safeguarding note
   credits.html        Photo credits and licences
   assets/
     css/base.css      Design tokens + full component library
@@ -61,7 +61,6 @@ drops that enhancement.
 | [Keen Slider](https://keen-slider.io) | MIT | Testimonials carousel | `index.html` |
 | [Frappe Charts](https://frappe.io/charts) | MIT | "Where your money goes" donation donut | `index.html` |
 | [Iconoir](https://iconoir.com) | MIT | Icon system (SVG, inlined) — replaces the emoji glyphs | all pages |
-| [PristineJS](https://pristine.js.org) | MIT | Contact-form validation | `contact.html` |
 
 To self-host instead of using the CDN, download each library into `assets/vendor/` and
 swap the `<script>`/`<link>` URLs in the page `<head>` and before `</body>`.
@@ -101,9 +100,10 @@ before launch:
 1. **Donation button** — currently links to the contact page. Point it at a real
    payment provider (e.g. Jersey-friendly `Charities Aid Foundation` bank transfer
    details, `PayPal` or `Give A Little`) before launch.
-2. **Contact form** — a static demo. Wire `contact.html`'s form to a mail service
-   (Formspree, Basin, Netlify Forms, or an Island-based host) — see the footnote
-   under the submit button.
+2. **Contact** — the page uses a `mailto:` button rather than a form, so there is no
+   backend to maintain and nothing to break. If the charity would rather collect
+   enquiries server-side (or wants a newsletter signup), that needs a form service
+   plus the DNS records to send from `maufantyouth.org`.
 3. **Session times** — verify the Tue/Wed/Thu/Fri timetable and age groups
    against the current term's rota.
 4. **Photos** — the site uses openly licensed photography (see

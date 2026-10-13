@@ -134,58 +134,21 @@
           </div>
         </div>
 
-        <!-- Form -->
-        <div class="rise rise--delay-2" style="background:var(--white); border-radius:var(--radius-xl); padding:var(--space-2xl); box-shadow:var(--shadow-md);">
+        <!-- Email us -->
+        <div class="rise rise--delay-2" style="background:var(--white); border-radius:var(--radius-xl); padding:var(--space-2xl); box-shadow:var(--shadow-md); display:flex; flex-direction:column; justify-content:center;">
           <h3 style="margin-bottom:var(--space-sm);">Send Us a Message</h3>
-          <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:var(--space-xl);">Tell us how we can help, or how you'd like to get involved. We'll come back to you as soon as a volunteer is free.</p>
+          <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:var(--space-2xl); line-height:1.8;">
+            One button, no forms. It opens your own email app with the address already filled in &mdash;
+            your message goes straight from you to the trustees, and nothing is stored on this website.
+          </p>
 
-          <form id="contact-form" onsubmit="return false;" novalidate style="display:flex; flex-direction:column; gap:var(--space-lg);">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-lg);">
-              <div class="field-wrap">
-                <label for="firstName" style="display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-xs); color:var(--text-primary);">First Name *</label>
-                <input type="text" id="firstName" name="firstName" required class="field" data-pristine-required-message="Please enter your first name">
-              </div>
-              <div class="field-wrap">
-                <label for="lastName" style="display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-xs); color:var(--text-primary);">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" required class="field" data-pristine-required-message="Please enter your last name">
-              </div>
-            </div>
+          <a href="mailto:chat@maufantyouth.org?subject=Website%20enquiry" class="btn btn--primary btn--large" style="width:100%; text-align:center;">Email chat@maufantyouth.org</a>
 
-            <div class="field-wrap">
-              <label for="email" style="display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-xs); color:var(--text-primary);">Email *</label>
-              <input type="email" id="email" name="email" required class="field" data-pristine-required-message="Please enter your email address" data-pristine-type-message="That email address does not look right">
-            </div>
-
-            <div class="field-wrap">
-              <label for="subject" style="display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-xs); color:var(--text-primary);">How can we help? *</label>
-              <select id="subject" name="subject" required class="field" style="appearance:auto;" data-pristine-required-message="Please choose a topic">
-                <option value="">Select a topic</option>
-                <option value="session">A young person wants to join a session</option>
-                <option value="parent">I'm a parent or carer with a question</option>
-                <option value="volunteer">I'd like to volunteer</option>
-                <option value="donate">I'd like to donate or fundraise</option>
-                <option value="partner">Partnership or grant enquiry</option>
-                <option value="press">Press or media</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-
-            <div class="field-wrap">
-              <label for="message" style="display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-xs); color:var(--text-primary);">Message *</label>
-              <textarea id="message" name="message" rows="5" required minlength="10" class="field" style="resize:vertical;" data-pristine-required-message="Please tell us a little more" data-pristine-minlength-message="A little more detail helps us help you"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--large" style="width:100%;">Send Message</button>
-            <div id="contact-success" class="form-success" role="status" aria-live="polite">
-              <strong>Thank you &mdash; your message has been checked and is ready to send.</strong><br>
-              This site is a static demo with no mail server connected, so nothing has been transmitted yet.
-              On the live site your message would reach the trustees at
-              <span class="mono">chat@maufantyouth.org</span>.
-            </div>
-            <p style="font-size:var(--text-xs); color:var(--text-muted); text-align:center; font-family:var(--font-mono);">
-              Form is a static demo &mdash; connect it to your own mail service before launch.
-            </p>
-          </form>
+          <p class="mono" style="font-size:var(--text-xs); color:var(--text-muted); margin-top:var(--space-lg); text-align:center; line-height:1.9;">
+            No email app on this device? Write to
+            <a href="mailto:chat@maufantyouth.org" style="color:var(--tide); font-weight:600;">chat@maufantyouth.org</a>
+            from any account, or use one of the addresses on the left.
+          </p>
         </div>
       </div>
     </div>
@@ -254,10 +217,7 @@
           <h5>Find the Centre</h5>
           <p class="footer__desc">Maufant Variety Youth Centre<br>La Grande Route de St Martin<br>St Saviour, Jersey JE2 7GT</p>
           <div class="footer__newsletter">
-            <form class="footer__newsletter-form" onsubmit="return false;">
-              <input type="email" class="footer__newsletter-input" placeholder="Your email address" aria-label="Email for newsletter">
-              <button type="submit" class="footer__newsletter-btn">Join</button>
-            </form>
+            <a class="footer__newsletter-link" href="mailto:chat@maufantyouth.org?subject=Mailing%20list">Join the mailing list &rarr;</a>
           </div>
         </div>
       </div>
@@ -272,9 +232,8 @@
     </div>
   </footer>
 
-  <!-- Open-source libraries: MapLibre GL JS (BSD-3) · PristineJS (MIT) -->
+  <!-- Open-source libraries: MapLibre GL JS (BSD-3) -->
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pristinejs@0.1.9/dist/pristine.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

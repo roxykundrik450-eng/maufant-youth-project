@@ -214,20 +214,6 @@
     el.textContent = String(new Date().getFullYear());
   });
 
-  /* ── Newsletter form: honest static demo handling ── */
-  document.querySelectorAll('.footer__newsletter-form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = form.querySelector('input[type="email"]');
-      const btn = form.querySelector('.footer__newsletter-btn');
-      if (!input || !btn) return;
-      const original = btn.textContent;
-      btn.textContent = input.value && input.checkValidity() ? 'Thanks!' : 'Add email';
-      setTimeout(() => { btn.textContent = original; }, 2200);
-      if (input.value && input.checkValidity()) input.value = '';
-    });
-  });
-
   /* ============================================================
      ENRICHMENT MODULES — powered by niche open-source libraries
        · MapLibre GL JS (BSD-3) + OpenFreeMap ..... vector map
@@ -235,7 +221,6 @@
        · Keen Slider (MIT) ........................ testimonials carousel
        · Frappe Charts (MIT) ...................... donation donut chart
        · Iconoir (MIT) ............................ icons (inlined SVG)
-       · PristineJS (MIT) ......................... form validation
      Each module is guarded so a page that omits a library (or a
      CDN that fails to load) degrades gracefully.
      ============================================================ */
@@ -368,35 +353,6 @@
     }
   }
 
-  /* ── PristineJS contact-form validation ── */
-  function setupFormValidation() {
-    if (typeof Pristine === 'undefined') return;
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    const success = document.getElementById('contact-success');
-
-    const pristine = new Pristine(form, {
-      classTo: 'field-wrap',
-      errorClass: 'pristine-error',
-      errorTextParent: 'field-wrap',
-      errorTextClass: 'pristine-error-text',
-    });
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (pristine.validate()) {
-        // Static site: no backend. Show an honest confirmation instead of faking a send.
-        if (success) {
-          success.classList.add('form-success--visible');
-          success.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
-        }
-        form.reset();
-        pristine.reset();
-      }
-    });
-  }
-
   /* ── Init ── */
   document.addEventListener('DOMContentLoaded', () => {
     setupRise();
@@ -410,6 +366,5 @@
     setupGallery();
     setupTestimonials();
     setupImpactChart();
-    setupFormValidation();
   });
 })();

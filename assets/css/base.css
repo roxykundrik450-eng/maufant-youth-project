@@ -745,38 +745,25 @@ h5 { font-size: var(--text-lg); }
 
 .footer__newsletter { margin-top: var(--space-md); }
 
-.footer__newsletter-form {
-  display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-
-.footer__newsletter-input {
-  flex: 1;
-  min-width: 0;
-  padding: 0.6rem 1rem;
+.footer__newsletter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.55rem 1.1rem;
   background: rgba(242, 247, 248, 0.08);
-  border: 1px solid rgba(242, 247, 248, 0.15);
+  border: 1px solid rgba(242, 247, 248, 0.16);
   border-radius: var(--radius-md);
   color: var(--mist);
   font-size: var(--text-sm);
-  font-family: var(--font-body);
-  outline: none;
-  transition: border-color var(--duration-fast) var(--ease-out);
+  font-weight: 600;
+  transition: background var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
 }
-.footer__newsletter-input::placeholder { color: rgba(242, 247, 248, 0.35); }
-.footer__newsletter-input:focus { border-color: var(--sandstone); }
-
-.footer__newsletter-btn {
-  padding: 0.6rem 1.2rem;
-  background: var(--sandstone);
-  color: var(--channel-dark);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  transition: background var(--duration-fast) var(--ease-out);
+.footer__newsletter-link:hover {
+  background: rgba(232, 163, 61, 0.16);
+  border-color: var(--sandstone);
+  color: var(--white);
 }
-.footer__newsletter-btn:hover { background: var(--sandstone-light); }
 
 .footer__bottom {
   border-top: 1px solid rgba(242, 247, 248, 0.1);
@@ -922,7 +909,6 @@ h5 { font-size: var(--text-lg); }
      · Keen Slider (MIT) ....................... testimonials carousel
      · Frappe Charts (MIT) ..................... donation donut chart
      · Iconoir (MIT) ........................... icons (inlined SVG)
-     · PristineJS (MIT) ........................ contact form validation
    ============================================================ */
 
 /* ── Layout utility for enrichment blocks ── */
@@ -1145,32 +1131,6 @@ h5 { font-size: var(--text-lg); }
 .maplibregl-popup-content strong { font-family: var(--font-display); display: block; margin-bottom: 2px; }
 .maplibregl-popup-close-button { font-size: 18px; padding: 2px 7px; color: var(--text-muted); }
 .maplibregl-ctrl-attrib { font-size: 10px; }
-
-/* ── Contact form validation (PristineJS) ── */
-.pristine-error {
-  border-color: #C0392B !important;
-  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12) !important;
-}
-.pristine-error-text {
-  display: block;
-  color: #C0392B;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  margin-top: 5px;
-}
-
-.form-success {
-  display: none;
-  margin-top: var(--space-lg);
-  padding: var(--space-lg);
-  background: rgba(18, 112, 140, 0.1);
-  border-left: 3px solid var(--tide);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-.form-success--visible { display: block; }
 
 /* ── Responsive: enrichment components ── */
 @media (max-width: 768px) {
