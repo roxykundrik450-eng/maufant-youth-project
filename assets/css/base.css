@@ -1179,3 +1179,73 @@ h5 { font-size: var(--text-lg); }
   .chart-card { padding: var(--space-lg); }
   .testimonial-slider .quote { padding: var(--space-2xl); }
 }
+
+/* ── FAQ (native details/summary) ── */
+.faq { display: flex; flex-direction: column; gap: var(--space-sm); max-width: 840px; margin: 0 auto; }
+.faq details {
+  background: var(--white);
+  border: 1px solid var(--mist-deeper);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+.faq details[open] { border-color: var(--tide); }
+.faq summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--channel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  line-height: 1;
+  color: var(--tide);
+  flex-shrink: 0;
+}
+.faq details[open] summary::after { content: "\2013"; }
+.faq p {
+  margin-top: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.85;
+}
+.faq ul {
+  margin-top: var(--space-sm);
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.faq li {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  list-style: disc;
+}
+
+/* ── Inline grid fallbacks ──
+   Several sections set grid-template-columns inline; without these the
+   columns would stay side by side on small screens. */
+@media (max-width: 1024px) {
+  [style*="repeat(4, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 768px) {
+  [style*="repeat(4, 1fr)"],
+  [style*="repeat(3, 1fr)"],
+  [style*="repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
+}
+
+/* ── Horizontal overflow guard ──
+   The hero's decorative Jersey outline and the section glow circles are
+   positioned partly outside the viewport; the off-canvas mobile menu sits
+   at right:-100%. None of them should make the page scroll sideways. */
+html { overflow-x: clip; }
+body { overflow-x: clip; }
+.hero { overflow: hidden; }

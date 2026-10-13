@@ -33,15 +33,18 @@ maufant-youth-project/
 
 ### Photography
 
-All photographs on the site are freely licensed and sourced from
-[Wikimedia Commons](https://commons.wikimedia.org); each one is credited with its
-author and licence on [`credits.html`](credits.html). They show **Jersey scenery and
-generic youth-club activity** — deliberately not the Project's own members or premises,
-because publishing photographs of identifiable young people requires consent that a
-stock image cannot supply. The trustee and testimonial avatars are drawn as initials
-and icons for the same reason.
+Photographs come from openly licensed collections, mostly
+[Wikimedia Commons](https://commons.wikimedia.org); each one is credited with its author
+and licence on [`credits.html`](credits.html). They cover two things: Jersey itself — the
+coastline, Gorey, Saint Brélade, St Helier — and the activities that fill a week at the
+Centre: table tennis, the kitchen, clay and craft, the music room, the games hall, trips
+outdoors.
 
-Before launch these placeholders should be replaced with the charity's own photography.
+Every file is used under a licence that permits reuse and adaptation (CC0, public domain,
+CC BY or CC BY-SA), and images have been cropped, resized and re-compressed for the web.
+When the Centre has its own photography of members and premises, the same layout will take
+it: drop new files into `assets/img/photos/` and update the credits page. The BaguetteBox
+gallery picks up new files automatically.
 
 ### Open-source components
 
@@ -103,10 +106,10 @@ before launch:
    under the submit button.
 3. **Session times** — verify the Tue/Wed/Thu/Fri timetable and age groups
    against the current term's rota.
-4. **Photos** — the site uses freely-licensed placeholder photographs (see
-   [`credits.html`](credits.html)). Swap in the Centre's own photography, taken with
-   appropriate consents, and update the credits page. The BaguetteBox gallery picks up
-   new files automatically.
+4. **Photos** — the site uses openly licensed photography (see
+   [`credits.html`](credits.html)). Add the Centre's own photographs of members and
+   premises when they are available, with the appropriate consents, and update the
+   credits page. The BaguetteBox gallery picks up new files automatically.
 5. **Social links** — the footer Facebook/Instagram icons are placeholders (`#`).
 6. **Safeguarding statement** — the note on the contact page should be reviewed
    or replaced with the charity's own approved wording.
