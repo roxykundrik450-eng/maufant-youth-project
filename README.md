@@ -93,9 +93,12 @@ Colours, spacing, radii and motion are all CSS custom properties in
 
 ## Before going live
 
-The content below is written from the charity's public register entry and is
-accurate, but is not the charity's own copy. Please confirm with the trustees
-before launch:
+The content is written from the charity's own records and its public register entry.
+Confirmed against source: the charity number and date of registration (16 August 2020)
+come from the Certificate of Registration issued by the Jersey Charity Commissioner,
+shown on the About page; the objects, registered address, contacts and AJC number come
+from the register entry. Anything not on that record is illustrative — see item 5.
+Please confirm the wording with the trustees before launch:
 
 1. **Donation button** — currently links to the contact page. Point it at a real
    payment provider (e.g. Jersey-friendly `Charities Aid Foundation` bank transfer
