@@ -110,12 +110,20 @@ before launch:
    [`credits.html`](credits.html)). Add the Centre's own photographs of members and
    premises when they are available, with the appropriate consents, and update the
    credits page. The BaguetteBox gallery picks up new files automatically.
-5. **Social links** — the footer Facebook/Instagram icons are placeholders (`#`).
-6. **Safeguarding statement** — the note on the contact page should be reviewed
+5. **Figures** — the public record (AJC member page, Jersey Charity Commissioner register)
+   carries the charity number, objects, address and contacts, but **no financial data at all**:
+   GiveRadar's Jersey dataset reports a financial return for 0% of the 381 registered charities.
+   The following are therefore illustrative and must be replaced with the trustees' own numbers:
+   the hero fundraising total and percentage, the "where your money goes" breakdown,
+   the per-place holiday cost, and the claim about core funding and reserves.
+   Either supply the real figures or remove those blocks.
+6. **Social links** — the footer carries an email icon only. Add real Facebook/Instagram
+   accounts if the charity has them; do not restore placeholder `#` links.
+7. **Safeguarding statement** — the note on the contact page should be reviewed
    or replaced with the charity's own approved wording.
-7. **Terms/privacy** — small charities collecting email addresses should publish
+8. **Terms/privacy** — small charities collecting email addresses should publish
    a short privacy notice describing what is done with them.
-8. **Map coordinates** — the MapLibre marker uses approximate coordinates for Maufant
+9. **Map coordinates** — the MapLibre marker uses approximate coordinates for Maufant
    (`-2.0632, 49.2098`) in `assets/js/main.js`. Replace `CENTRE` with the Centre's exact
    longitude/latitude before launch.
 
